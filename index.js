@@ -3,8 +3,8 @@ import express from "express";
 const app = express();
 const port = 3000;
 
-app.use((request, response) => {
-    console.log(`URL: ${request.url}`);
+app.on('request', (request, response, next) => {
+    console.log('URL: ${request.url}');
     response.end('Hello Node');
 });
 
